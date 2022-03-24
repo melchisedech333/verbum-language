@@ -1,7 +1,7 @@
 ### :arrow_right: Verbum Programming Language ^_^
 
 ```
- __      __       _                  Language
+ __      __       _                    Language
  \ \    / /      | |                    
   \ \  / /__ _ __| |__  _   _ _ __ ___  
    \ \/ / _ \ '__| '_ \| | | | '_ ` _ \ 
