@@ -1,6 +1,7 @@
 ### :arrow_right: Verbum Programming Language ^_^
 
 Uma linguagem de programação desenvolvida com o propósito de ser utilizada principalmente para implementação de sistemas distribuídos.
+Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
 A meta da Verbum é suportar os seguintes conceitos:
 
@@ -13,6 +14,13 @@ A meta da Verbum é suportar os seguintes conceitos:
 - Alta tolerância a falhas
 - Escalabilidade horizontal
 
-Atualmente a linguagem encontra-se em desenvolvimento da primeira versão.
+
+### Descrição do fluxo de execução
+
+![Fluxo 1](extras/images/fluxo-1.png)
+
+![Fluxo 2](extras/images/fluxo-2.png)
+
+![Fluxo 3](extras/images/fluxo-3.png)
 
 
