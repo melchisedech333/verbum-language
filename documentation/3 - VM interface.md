@@ -14,30 +14,26 @@
 
 <b>Funcionalidades:</b>
 ```
-    Insert, Update, Delete:
-        Importações (arquivos de cabeçalho / inclusões).
-        Pacote / space / namespace.
-        Arquivo.
-        Classe.
-        Método.
-        Linha A.
-        Linha A à Z (Update, Delete).
+Insert, Update, Delete:
+    Importações (arquivos de cabeçalho / inclusões).
+    Pacote / space / namespace.
+    Arquivo.
+    Classe.
+    Método.
+    Linha A.
+    Linha A à Z (Update, Delete).
 ```
 
 <b>Controles relacionados à execução (usado em conjunto):</b>
-```
-    Aguardar finalização da execução atual.
-    Finalizar abrutamente todas execuções em aberto.
-```
+- Aguardar finalização da execução atual.
+- Finalizar abrutamente todas execuções em aberto.
 
 
 #### Informações de uso e disponibilidade de recursos do node.
 
 <b>Informações gerais:</b>
-```
-    Informações do node (tipo, conexão, configurações, etc).
-    OS, Kernel, distribuição, memória, disco, IP local/externo, usuário, etc.
-```
+- Informações do node (tipo, conexão, configurações, etc).
+- OS, Kernel, distribuição, memória, disco, IP local/externo, usuário, etc.
 
 
 #### Gestão dos nodes.
