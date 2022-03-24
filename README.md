@@ -18,6 +18,8 @@ A meta da Verbum é suportar os seguintes conceitos:
 
 #### Descrição geral do fluxo de execução do código Verbum no interpretador
 
+
+
 ![Fluxo 1](extras/images/fluxo-1.png)
 
 ![Fluxo 2](extras/images/fluxo-2.png)
