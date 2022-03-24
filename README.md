@@ -16,7 +16,7 @@ Uma linguagem de programação desenvolvida com o propósito de ser utilizada pr
 
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
-<b>A Verbum suporta os seguintes conceitos:</b>
+<b>Verbum suporta os seguintes conceitos:</b>
 
 - Multi-paradigma: procedural e orientada a objetos
 - Computação distribuída
