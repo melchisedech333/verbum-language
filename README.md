@@ -21,25 +21,19 @@ A meta da Verbum é suportar os seguintes conceitos:
 <br>
 
 <p align="center">
-
-![Fluxo 1](extras/images/fluxo-1.png)
-
+    <img src="extras/images/fluxo-1.png" />
 </p>
 
 <br>
 
 <p align="center">
-
-![Fluxo 2](extras/images/fluxo-2.png)
-
+    <img src="extras/images/fluxo-2.png" />
 </p>
 
 <br>
 
 <p align="center">
-
-![Fluxo 3](extras/images/fluxo-3.png)
-
+    <img src="extras/images/fluxo-3.png" />
 </p>
 
 
