@@ -1,5 +1,14 @@
 ### :arrow_right: Verbum Programming Language ^_^
 
+```
+ __      __       _                  Language
+ \ \    / /      | |                    
+  \ \  / /__ _ __| |__  _   _ _ __ ___  
+   \ \/ / _ \ '__| '_ \| | | | '_ ` _ \ 
+    \  /  __/ |  | |_) | |_| | | | | | |
+     \/ \___|_|  |_.__/ \__,_|_| |_| |_|
+```
+
 Uma linguagem de programação desenvolvida com o propósito de ser utilizada principalmente para implementação de sistemas distribuídos.
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
