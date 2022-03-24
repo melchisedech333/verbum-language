@@ -6,8 +6,10 @@
 - Autenticar no node / conecta no mesmo passando pelo handshake e autenticação (caso necessário).
 
 - Conecta (e mantem conectado) nos nodes-filhos persistentes:
--    Apenas do escopo do node em questão.
--    De todos os nodes do sistema / código em questão.
+```
+    Apenas do escopo do node em questão.
+    De todos os nodes do sistema / código em questão.
+```
 
 - Enviar código Verbum para ser executado.
 - Enviar AST para ser executada.
