@@ -25,7 +25,7 @@ A meta da Verbum é suportar os seguintes conceitos:
 
 ---
 
-### Descrição geral do fluxo de execução do código Verbum no interpretador.
+### :arrow_right: Descrição geral do fluxo de execução do código Verbum no interpretador.
 
 #### Execução a partir de código Verbum:
 <p align="center">
