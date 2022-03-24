@@ -4,14 +4,14 @@ Uma linguagem de programação desenvolvida com o propósito de ser utilizada pr
 
 A meta da Verbum é suportar os seguintes conceitos:
 
-    - Programação orientada a objetos
-    - Computação distribuída
-    - Computação concorrente
-    - Meta-programação
-    - Hot code reloading
-    - Multi-plataforma
-    - Alta tolerância a falhas
-    - Escalabilidade horizontal
+- Programação orientada a objetos
+- Computação distribuída
+- Computação concorrente
+- Meta-programação
+- Hot code reloading
+- Multi-plataforma
+- Alta tolerância a falhas
+- Escalabilidade horizontal
 
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão.
 
