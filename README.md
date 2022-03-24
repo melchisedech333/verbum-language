@@ -15,7 +15,7 @@ A meta da Verbum é suportar os seguintes conceitos:
 - Escalabilidade horizontal
 
 
-### Descrição do fluxo de execução
+### Descrição geral do fluxo de execução do código Verbum no interpretador
 
 ![Fluxo 1](extras/images/fluxo-1.png)
 
