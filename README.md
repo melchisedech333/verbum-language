@@ -14,7 +14,7 @@ A meta da Verbum é suportar os seguintes conceitos:
 - Alta tolerância a falhas
 - Escalabilidade horizontal
 
-
+---
 
 #### Descrição geral do fluxo de execução do código Verbum no interpretador
 
