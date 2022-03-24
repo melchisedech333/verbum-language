@@ -1,20 +1,18 @@
 ### :arrow_right: Descrição geral da interface de controle da VM/interpretador Verbum.
 
-#### Funcionalidades:
-
+#### Conectividade.
 - Verificar conectividade com node / disponibilidade de conexão.
 - Autenticar no node / conecta no mesmo passando pelo handshake e autenticação (caso necessário).
 
-- Conecta (e mantem conectado) nos nodes-filhos persistentes:
-```
-    Apenas do escopo do node em questão.
-    De todos os nodes do sistema / código em questão.
-```
 
-- Enviar código Verbum para ser executado.
-- Enviar AST para ser executada.
+#### Recursos gerais.
+- Enviar código Verbum para ser executado no interpretador.
+- Enviar AST para ser executada no interpretador.
 
-- Hot code reloading e meta-programação:
+
+#### Hot code reloading e meta-programação.
+
+<b>Funcionalidades:</b>
 ```
     Insert, Update, Delete:
         Importações (arquivos de cabeçalho / inclusões).
@@ -26,16 +24,25 @@
         Linha A à Z (Update, Delete).
 ```
 
-- Controles relacionados à execução (usado em conjunto):
+<b>Controles relacionados à execução (usado em conjunto):</b>
 ```
     Aguardar finalização da execução atual.
     Finalizar abrutamente todas execuções em aberto.
 ```
 
-- Informações de uso e disponibilidade de recursos do node:
+
+#### Informações de uso e disponibilidade de recursos do node.
+
+<b>Informações gerais:</b>
 ```
     Informações do node (tipo, conexão, configurações, etc).
-    OS, Kernel, distro, memória, espaço em disco, IP local, IP externo, Nome de usuário, etc.
-    Nodes filhos em execução (com seus respectivos recursos).
+    OS, Kernel, distribuição, memória, disco, IP local/externo, usuário, etc.
 ```
+
+
+#### Gestão dos nodes.
+
+- Compartilhamento do Node Mapper.
+- Rede de nodes em execução (informações atualizadas em tempo de execução).
+
 
