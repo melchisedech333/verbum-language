@@ -18,7 +18,7 @@ A meta da Verbum é suportar os seguintes conceitos:
 
 #### Descrição geral do fluxo de execução do código Verbum no interpretador
 
-
+<br>
 
 ![Fluxo 1](extras/images/fluxo-1.png)
 
