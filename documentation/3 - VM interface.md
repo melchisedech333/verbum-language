@@ -14,26 +14,26 @@
 
 - Hot code reloading e meta-programação:
 ```
-     Insert, Update, Delete:
-         Importações (arquivos de cabeçalho / inclusões).
-         Pacote / space / namespace.
-         Arquivo.
-         Classe.
-         Método.
-         Linha A.
-         Linha A à Z (Update, Delete).
+    Insert, Update, Delete:
+        Importações (arquivos de cabeçalho / inclusões).
+        Pacote / space / namespace.
+        Arquivo.
+        Classe.
+        Método.
+        Linha A.
+        Linha A à Z (Update, Delete).
 ```
 
--     Controles relacionados à execução (usado em conjunto):
+- Controles relacionados à execução (usado em conjunto):
 ```
-         Aguardar finalização da execução atual.
-         Finalizar abrutamente todas execuções em aberto.
+    Aguardar finalização da execução atual.
+    Finalizar abrutamente todas execuções em aberto.
 ```
 
 - Informações de uso e disponibilidade de recursos do node:
 ```
-     Informações do node (tipo, conexão, configurações, etc).
-     OS, Kernel, distro, memória, espaço em disco, IP local, IP externo, Nome de usuário, etc.
-     Nodes filhos em execução (com seus respectivos recursos).
+    Informações do node (tipo, conexão, configurações, etc).
+    OS, Kernel, distro, memória, espaço em disco, IP local, IP externo, Nome de usuário, etc.
+    Nodes filhos em execução (com seus respectivos recursos).
 ```
 
