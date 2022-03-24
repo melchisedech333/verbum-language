@@ -1,4 +1,4 @@
-# :arrow_right: Verbum Programming Language ^_^
+### :arrow_right: Verbum Programming Language ^_^
 
 Uma linguagem de programação desenvolvida com o propósito de ser utilizada principalmente para implementação de sistemas distribuídos.
 
