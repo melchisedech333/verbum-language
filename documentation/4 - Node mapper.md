@@ -11,18 +11,18 @@ Além do compartilhamento das informações do Node Mapper, os nodes também com
 
 #### Funcionalidades do Node Mapper.
 
-O acesso a esta gestão é por via Shell interativo, e via código.
+O acesso a esta gestão é por via de shell interativo, e via código.
 
 - Listar os nodes existentes e suas respectivas informações.
 - Adicionar novos nodes diretamente no Node Mapper, pois o sistema pode usar tais recursos em tempo de execução.
 - Excluir um node.
-- Informações de um node em específico: se utiliza estas informações para administrar o node em questão (através de sua interface).
+- Informações de um node em específico: para conectar-se ao node e administra-lo.
 
 
 #### Instanciamento dos nodes.
 
-É possível conectar em um node já existente (Shell interativo, via código)
-Criar um através do interpretador (Shell interativo)
+É possível conectar em um node já existente (shell interativo, via código)<br>
+Criar um através do interpretador (shell interativo)<br>
 Ou criar um node em tempo de execução (via código).
 
 <b>Ao criar um node deve-se especificar:</b>
