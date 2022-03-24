@@ -20,21 +20,21 @@ A meta da Verbum é suportar os seguintes conceitos:
 
 <br>
 
-#### Execução a partir de código Verbum
+#### Execução a partir de código Verbum:
 <p align="center">
     <img src="extras/images/fluxo-1.png" />
 </p>
 
 <br>
 
-#### Execução a partir de AST compartilhada por node pai
+#### Execução a partir de AST compartilhada por node pai:
 <p align="center">
     <img src="extras/images/fluxo-2.png" />
 </p>
 
 <br>
 
-#### Execução a partir de Shell interativo, ou recursos da linguagem
+#### Execução a partir de Shell interativo, ou recursos da linguagem:
 <p align="center">
     <img src="extras/images/fluxo-3.png" />
 </p>
