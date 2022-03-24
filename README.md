@@ -12,7 +12,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/melchisedech333/verbum-language?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/melchisedech333/verbum-language?style=for-the-badge)
 
-Uma linguagem de programação desenvolvida com o propósito de ser utilizada principalmente para implementação de sistemas distribuídos.
+Uma linguagem de programação desenvolvida com o propósito de ser utilizada principalmente para implementação de sistemas complexos e distribuídos.
 
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
