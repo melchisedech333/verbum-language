@@ -21,8 +21,8 @@ O acesso a esta gestão é por via de shell interativo, e via código.
 
 #### Instanciamento dos nodes.
 
-É possível conectar em um node já existente (shell interativo, via código)<br>
-Criar um através do interpretador (shell interativo)<br>
+É possível conectar em um node já existente (shell interativo, via código).<br>
+Criar um através do interpretador (shell interativo).<br>
 Ou criar um node em tempo de execução (via código).
 
 <b>Ao criar um node deve-se especificar:</b>
