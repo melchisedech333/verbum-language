@@ -35,11 +35,11 @@ var variable :str       = "Verbum 😃";
 
 
 #### Array
-
 ```javascript
 var variable :array = [ 3, 1, 3, 3, 7 ];
 var variable :array = [ 'V', true, "Verbum 😃" ];
 var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, n ];
+var variable :array = [ ];
 
 var variable :array = [
     1, 2, 3,
@@ -51,6 +51,23 @@ var variable :array = [
     [
         a, b, c,
         10 :int, 20 :uint, 30 :float
+    ]
+];
+
+var variable :array = [
+    name: "Verbum",
+    value: "Divinus"
+];
+
+var variable :array = [
+    [ name: "Verbum" ],
+    [ name: "Divinus" ],
+];
+
+var variable :array = [
+    items: [
+        [ name: "Verbum" ],
+        [ name: "Divinus" ],
     ]
 ];
 
