@@ -134,7 +134,7 @@ var variable :symbol = {
         { name: "Divinus" },
         {
             values: [
-                10, 20, 30, { name: "Member" }
+                10, 20, 30:float, { name: "Member" }
             ]
         },
         31337
