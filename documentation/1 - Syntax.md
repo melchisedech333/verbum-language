@@ -105,6 +105,7 @@ var variable :const     = "Verbum 😃";
 
 #### Array
 ```javascript
+// Comuns, com acesso apenas por indexação.
 var variable :array = [ 3, 1, 3, 3, 7 ];
 var variable :array = [ 'V', true, "Verbum 😃" ];
 var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, true, n ];
@@ -122,13 +123,9 @@ var variable :array = [
         10 :int, 20 :uint, 30 :float
     ]
 ];
-```
 
-
-#### Symbol
-```javascript
-/// Declaração.
-var variable :symbol = {
+// Associativos, com acesso via chave/hash.
+var variable :array = {
     items: [
         { name: "Verbum" },
         { name: "Divinus" },
@@ -141,12 +138,23 @@ var variable :symbol = {
     ]
 };
 
-// Acessos.
+// Exemplo de acessos de arrays associativos.
 variable.items[0].name              // Verbum
 variable.items[1].name              // Divinus
 variable.items[2].values[0]         // 10
 variable.items[2].values[3].name    // Member
 variable.items[3]                   // 31337
+
+// Outros exemplos.
+var variable : array = [
+    { name: "Verbum" },
+    10, 20, 30,
+    {
+        values: [
+            31337 :double, { name: "Divinus" }
+        ] 
+    }
+];
 ```
 
 
