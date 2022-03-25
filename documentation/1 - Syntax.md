@@ -28,17 +28,32 @@ var variable :int       = 31337;
 var variable :uint      = 31337;
 var variable :float     = 3.1337;
 var variable :double    = 3.1337;
-var variable :bool      = false;
+var variable :bool      = true;
 var variable :char      = 'V';
-var variable :cstr      = "Verbum";
-var variable :ustr      = "Verbum 😃";
+var variable :str       = "Verbum 😃";
 ```
 
 
-#### Estruturas de dados
-```
-array
-struct
+#### Array
+
+```javascript
+var variable :array = [ 3, 1, 3, 3, 7 ];
+var variable :array = [ 'V', true, "Verbum 😃" ];
+var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, n ];
+
+var variable :array = [
+    1, 2, 3,
+    [
+        'a', 'b', 'c',
+        "Verbum", "Divinus",
+        3.1337
+    ],
+    [
+        a, b, c,
+        10 :int, 20 :uint, 30 :float
+    ]
+];
+
 ```
 
 
