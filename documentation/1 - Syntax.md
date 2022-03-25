@@ -107,7 +107,7 @@ var π = 3.14;
 ```
 
 
-#### Constantes.
+#### Constantes
 ```javascript
 // Constantes aceitam apenas valores comuns.
 var variable :const     = 31337;
@@ -261,19 +261,6 @@ print("Value: {}\n",
 - Encapsulamento/visibilidade: com os comandos pub, priv e pro, se define a visibilidade dos atributos e métodos. Encapsulamento é o empacotamento de "dados" e "funções operando nesses dados" em um único componente e restringindo o acesso a alguns dos componentes do objeto. Encapsulamento significa que a representação interna de um objeto geralmente fica oculta fora da definição do objeto. Ou seja, ocultação de implementação.
 - Polimorfismo estático (sobrecarga): quando há vários métodos com o mesmo nome, mas com assinatura diferente (todos válidos).
 - Polimorfismo dinâmico (sobrescrita): quando se sobrescreve um método herdado de uma outra classe.
-
-Em relação a herança, é possível realizar múltiplas heranças, bastando separa-las por vírgula.
-```php
-interface A extends B, C, D { ...
-class A extends B, C, D { ...
-```
-
-Também é possível implementar várias interfaces.
-```php
-class A implements B, C, D { ...
-```
-
-Para ambos os casos, quando há várias assinatura para um mesmo método, os mesmos são tratados como polimorfismo.
 
 ```php
 // Interface: métodos públicos que as classes devem necessariamente implementar.
