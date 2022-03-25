@@ -124,7 +124,7 @@ fn primary (a: int, b: int) -> int {
 
 
 #### Operadores
-```mysql
+```c
 // Aritméticos.
 +           Soma
 -           Subtração
