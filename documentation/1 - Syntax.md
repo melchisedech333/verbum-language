@@ -86,7 +86,7 @@ use std:io, path/test, other
 
 // Todos arquivos dentro de um pacote ou diretório.
 use std:*
-use path\*
+use path/*
 ```
 
 
