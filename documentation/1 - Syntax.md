@@ -98,6 +98,14 @@ for (int a =0; a<100; a++)
 fn example (a: int, b: int) -> int {
     ret (a * b) + 31337;
 }
+
+fn primary (a: int, b: int) -> int {
+    fn secondary (a: int, b: int) -> int {
+        ret (a * b) + 31337;
+    }
+
+    ret secondary(a, b);
+}
 ```
 
 #### OOP
