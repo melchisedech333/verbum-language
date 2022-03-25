@@ -23,12 +23,16 @@ use test
 
 
 #### Tipos primitivos
-int
-float
-char
-string
-bool
-const
+```Javascript
+var variable :int       = 31337;
+var variable :uint      = 31337;
+var variable :float     = 3.1337;
+var variable :double    = 3.1337;
+var variable :bool      = false;
+var variable :char      = 'V';
+var variable :cstr      = "Verbum";
+var variable :ustr      = "Verbum 😃";
+```
 
 
 #### Estruturas de dados
@@ -50,13 +54,13 @@ else
 
 #### Loops
 ```c++
-for (int a=0; a<100; a++)
+for (int a =0; a<100; a++)
     print("Hello world\n");
 ```
 
 #### Funções
 ```rust
-fn example (int a) -> int {
+fn example (a: int) -> int {
     ret a + 31337;
 }
 ```
