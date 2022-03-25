@@ -85,17 +85,19 @@ use std:io, path/test, other
 
 #### Tipos primitivos
 ```javascript
+// Obs: para valores comuns o tipo é inferido automaticamente.
 var variable :int       = 31337;
-var variable :uint      = 31337;
 var variable :float     = 3.1337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
+var variable :char      = 'V';
 var variable :str       = "Verbum 😃";
 ```
 
 
 #### Constantes.
 ```javascript
+// Constantes aceitam apenas valores comuns.
 var variable :const     = 31337;
 var variable :const     = 3.1337;
 var variable :const     = true;
