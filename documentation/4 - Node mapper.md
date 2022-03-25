@@ -1,4 +1,4 @@
-### :arrow_right: Descrição geral do funcionamento do Node Mapper.
+### :arrow_right: Funcionamento do Node Mapper.
 
 O Node Mapper possui o papel de auxiliar na gestão dos nodes do sistema projetado, podendo monitorar os nodes e realizar ações nos mesmos através de sua API. Sendo possível adicionar manualmente novos nodes no Node Mapper. Bem como através da sintaxe da linguagem, poder acessar a lista de nodes e usá-los no sistema.
 

@@ -1,4 +1,4 @@
-### :arrow_right: Descrição geral da interface de controle da VM/interpretador Verbum.
+### :arrow_right: Interface de controle da VM/interpretador Verbum.
 
 #### Conectividade.
 - Verificar conectividade com node / disponibilidade de conexão.

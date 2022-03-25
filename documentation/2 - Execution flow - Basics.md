@@ -1,4 +1,4 @@
-### :arrow_right: Descrição geral do fluxo de execução do código Verbum no interpretador.
+### :arrow_right: Fluxo de execução do código Verbum no interpretador.
 
 #### Execução a partir de código Verbum:
 <p align="center">

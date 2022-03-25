@@ -52,7 +52,7 @@ Outros / gerais.
 use                     Importação de módulos / bibliotecas
 var                     Declaração de variáveis
 if, elif, else          Condicionais
-for                     Loops
+for, break, next        Loops
 fn                      Funções
 ret                     Retorno usado em funções e métodos
 
@@ -171,7 +171,7 @@ var variable : array = [
     }
 ];
 
-// Protótipo de função como elemento de um array.
+// Função como elemento de um array.
 // Com arrays indexados.
 var variable = [
     31337,
@@ -207,8 +207,18 @@ else
 
 #### Loops
 ```c++
-for (int a =0; a<100; a++)
+for (a:int = 0; a<100; a++)
     print("Hello world\n");
+
+for (a:int = 0; ; a++) {
+    if (a >= 100)
+        break;
+}
+
+for (a:int = 0; ; a++) {
+    if (a < 100)
+        next;
+}
 ```
 
 #### Funções
@@ -237,16 +247,17 @@ print("Value: {}\n",
 );
 ```
 
-
+---
 #### OOP
-#### Estrutura geral
+#### Escopos e noções gerais
 
 ```javascript
+// Define um pacote
+package 
 // Namespace
-// Herança
-// Polimorfismo
-
 space Station
+
+
 
 class Other {
     // ...
