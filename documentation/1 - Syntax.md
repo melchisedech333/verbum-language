@@ -39,7 +39,7 @@ Outros / gerais.
 []                      Definição de escopo de array
 ;                       Finalização de comando
 : ->                    Prefixação para uso tipos, e importações
-.                       Acessa elemento de objeto
+.                       Acessa elemento de objeto, e arrays
 \                       Caracteres especiais dentro de strings
 /**/ //                 Comentários
 ```
@@ -56,6 +56,7 @@ ret                     Retorno usado em funções e métodos
 
 space                   Definição de área (semelhante a namespace e package)
 class                   Definição de classe
+extends                 Realização de herança
 pub, priv, static       Definição de atributos e métodos
 this                    Referência ao objeto instanciado
 new                     Instancia novo objeto
@@ -121,24 +122,31 @@ var variable :array = [
         10 :int, 20 :uint, 30 :float
     ]
 ];
+```
 
-var variable :array = [
-    name: "Verbum",
-    value: "Divinus"
-];
 
-var variable :array = [
-    [ name: "Verbum" ],
-    [ name: "Divinus" ],
-];
-
-var variable :array = [
+#### Symbol
+```javascript
+/// Declaração.
+var variable :symbol = {
     items: [
-        [ name: "Verbum" ],
-        [ name: "Divinus" ],
+        { name: "Verbum" },
+        { name: "Divinus" },
+        {
+            values: [
+                10, 20, 30, { name: "Member" }
+            ]
+        },
+        31337
     ]
-];
+};
 
+// Acessos.
+variable.items[0].name              // Verbum
+variable.items[1].name              // Divinus
+variable.items[2].values[0]         // 10
+variable.items[2].values[3].name    // Member
+variable.items[3]                   // 31337
 ```
 
 
@@ -178,9 +186,16 @@ fn primary (a: int, b: int) -> int {
 #### Estrutura geral
 
 ```javascript
+// Namespace / Package
+// Herança
+// Polimorfismo
 space Station
 
-class Example {
+class Other {
+    // ...
+}
+
+class Example extends Other {
     priv var attributeA :uint = 31337;
     pub var attributeB :str  = "Verbum 😃";
 
@@ -195,12 +210,20 @@ class Example {
             this.attributeB
         ];
     }
+
+    pub fn getValues (index :int) -> uint {
+        if (index == 1)
+            ret this.attributeA;
+        ret -1;
+    }
 }
 
-var obj :Example = new Example(31337, "Verbum");
-var result :array = obj.getValues();
+var obj :Example   = new Example(31337, "Verbum");
+var resultA :array = obj.getValues();
+var resultB :uint  = obj.getValues(1);
 
-print("a: {}, b: {}\n", result[0], result[1]);
+print("ResultA = a: {}, b: {}\n", resultA[0], resultA[1]);
+print("resultB = {}\n", resultB);
 ```
 
 
