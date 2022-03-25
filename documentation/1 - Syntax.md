@@ -1,16 +1,17 @@
 ### :arrow_right: Descrição geral da sintaxe Verbum.
 
 #### Importações
-```c
-
-```
+include
+import
+use
 
 
 #### Tipos primitivos.
-integer
+int
 float
-character
+char
 string
+bool
 
 
 #### Estruturas de dados.
@@ -21,11 +22,11 @@ struct
 #### Condicionais.
 ```python
 if (expression) 
-    print("One");
+    print("value 1");
 elif (expression)
-    print("Two");
+    print("value 2");
 else
-    print("Three");
+    print("value 3");
 ```
 
 #### Loops.
@@ -36,9 +37,8 @@ for (int a=0; a<100; a++)
 
 #### Rotinas / funções.
 ```rust
-fn function_example (int a) -> int {
-    int value = a + 31337;
-    return value;
+fn example (int a) -> int {
+    ret a + 31337;
 }
 ```
 
