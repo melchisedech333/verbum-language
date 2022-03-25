@@ -54,7 +54,7 @@ for (int a=0; a<100; a++)
     print("Hello world\n");
 ```
 
-#### Rotinas / funções
+#### Funções
 ```rust
 fn example (int a) -> int {
     ret a + 31337;
