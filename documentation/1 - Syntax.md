@@ -94,7 +94,7 @@ var variable :float     = 1.337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
 var variable :char      = '♥';
-var variable :str       = "Verbum 😃";
+var variable :str       = "Verbum 🥰";
 
 // O UNICODE é aceito no uso comum da linguagem.
 var λ = "Verbum ♥";
@@ -108,7 +108,7 @@ var π = 3.14;
 var variable :const     = 31337;
 var variable :const     = 3.1337;
 var variable :const     = true;
-var variable :const     = "Verbum 😃";
+var variable :const     = "Verbum 🥰";
 ```
 
 
@@ -116,7 +116,7 @@ var variable :const     = "Verbum 😃";
 ```javascript
 // Indexados, com acesso via número do index.
 var variable :array = [ 3, 1, 3, 3, 7 ];
-var variable :array = [ 'V', '♥', true, "Verbum 😃" ];
+var variable :array = [ 'V', '♥', true, "Verbum 🥰" ];
 var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, true, n ];
 var variable :array = [ ];
 
