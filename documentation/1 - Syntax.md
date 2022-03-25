@@ -38,9 +38,10 @@ Outros / gerais.
 {}                      Definição de escopo (código), e inclusão de dados em strings
 []                      Definição de escopo de array
 ;                       Finalização de comando
-: ->                    Prefixação para uso tipos, e importações
+: ->                    Prefixação para uso tipos, uso nas importações, e declaração em arrays associativos
 .                       Acessa elemento de objeto, e arrays
 \                       Caracteres especiais dentro de strings
+<>                      Utilizado com o comando "use" para importar múltiplos pacotes
 /**/ //                 Comentários
 ```
 
@@ -77,6 +78,7 @@ use path/test
 
 // Multiplas declarações.
 use std:io, std:net, test
+use std:<io,net>, test
 
 // Meslcando todos os modos.
 use std:io, path/test, other
@@ -85,13 +87,18 @@ use std:io, path/test, other
 
 #### Tipos primitivos
 ```javascript
-// Obs: para valores comuns o tipo é inferido automaticamente.
+// Para valores comuns o tipo é inferido automaticamente.
+// Os caracteres e strings são UNICODE.
 var variable :int       = 31337;
-var variable :float     = 3.1337;
+var variable :float     = 1.337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
-var variable :char      = 'V';
+var variable :char      = '♥';
 var variable :str       = "Verbum 😃";
+
+// O UNICODE é aceito no uso comum da linguagem.
+var γ = "Verbum ♥";
+var π = 3.14;
 ```
 
 
@@ -107,9 +114,9 @@ var variable :const     = "Verbum 😃";
 
 #### Array
 ```javascript
-// Comuns, com acesso apenas por indexação.
+// Indexados, com acesso via número do index.
 var variable :array = [ 3, 1, 3, 3, 7 ];
-var variable :array = [ 'V', true, "Verbum 😃" ];
+var variable :array = [ 'V', '♥', true, "Verbum 😃" ];
 var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, true, n ];
 var variable :array = [ ];
 
