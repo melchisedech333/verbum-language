@@ -97,7 +97,7 @@ var variable :char      = '♥';
 var variable :str       = "Verbum 😃";
 
 // O UNICODE é aceito no uso comum da linguagem.
-var γ = "Verbum ♥";
+var λ = "Verbum ♥";
 var π = 3.14;
 ```
 
