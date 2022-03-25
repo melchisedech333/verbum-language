@@ -83,6 +83,10 @@ use std:<io,net>, test
 
 // Meslcando todos os modos.
 use std:io, path/test, other
+
+// Todos arquivos dentro de um pacote ou diretório.
+use std:*
+use path\*
 ```
 
 
@@ -251,47 +255,75 @@ print("Value: {}\n",
 #### OOP
 #### Escopos e noções gerais
 
+Em relação a herança, é possível realizar múltiplas heranças, bastando separa-las por vírgula.
 ```javascript
-// Define um pacote
-package 
-// Namespace
-space Station
+interface A extends B, C, D { ...
+class A extends B, C, D { ...
+```
 
+Também é possível implementar várias interfaces.
+```javascript
+class A implements B, C, D { ...
+```
 
+Para ambos os casos, quando há conflito de métodos, os mesmos são tratados como polimorfismo, contendo várias possibilidade de chamar um método (de acordo com a assinatura). E para os métodos idênticos, os mesmos são sobrescritos (onde o último declarado irá predominar sobre os anteriores).
 
-class Other {
-    // ...
+```javascript
+// Interface: métodos públicos que as classes devem necessariamente implementar.
+interface FirstTemplate {
+    pub fn getValues () -> array;
+    pub fn getValues (index :int) -> int;
 }
 
-class Example extends Other {
+// Interface com herança.
+interface ExampleTemplate extends FirstTemplate {
+    pub fn checkString (string :str);
+}
+
+// Classe.
+class Common {
+    // ...
+    pub fn checkString (string :str) -> int { /* ... */ }
+}
+
+// Classe com herança e implementação de interface.
+class Example extends Common implements ExampleTemplate {
+
+    // Atributos.
     priv var attributeA :uint = 31337;
     pub var attributeB :str  = "Verbum 😃";
 
+    // Construtor.
     Example (a: uint, b :str) {
         this.attributeA = a;
         this.attributeB = b;
     }
 
-    pub fn getValues () -> [] {
+    // Métodos e polimorfismo (sobrecarga).
+    pub fn getValues () -> array {
         ret [
             this.attributeA,
             this.attributeB
         ];
     }
 
-    pub fn getValues (index :int) -> uint {
+    pub fn getValues (index :int) -> int {
         if (index == 1)
             ret this.attributeA;
         ret -1;
     }
 }
 
-var obj :Example   = new Example(31337, "Verbum");
-var resultA :array = obj.getValues();
-var resultB :uint  = obj.getValues(1);
+// Instanciamento e uso.
+var obj     :Example  = new Example(31337, "Verbum");
+var resultA :array    = obj.getValues();
+var resultB :int      = obj.getValues(1);
+var resultC :int      = obj.checkString("Verbum Divinus");
 
 print("ResultA = a: {}, b: {}\n", resultA[0], resultA[1]);
 print("resultB = {}\n", resultB);
+print("Check String = {}\n", resultC);
+
 ```
 
 

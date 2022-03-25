@@ -32,6 +32,8 @@ Organização do diretório (para múltiplos módulos):
 |- package.json                 # file:                 configurações do pacote
 |- io.v                         # file:                 arquivo de referência do módulo
 |- io                           # directory (optional): arquivos do módulo
+|--- file.v                     # ...
+|--- memory.v                   # ...
 |- net.v                        # file:                 ...
 |- net                          # directory (optional): ...
 ```
@@ -85,11 +87,20 @@ Ao executar o instalador do pacote em questão, serão baixadas todas as depend�
 Por padrão as dependências do pacote ficam instaladas e disponíveis para todos (instaladas no diretório de instalação da linguagem).
 Mas pode-se escolher entre manter as dependências no diretório atual do pacote em questão, ou instalar para uso permanente.
 
-<b>>Pontos importantes:</b>
-- Se o pacote é de módulo único, é necessário criar um arquivo dentro do diretório do pacote, com o mesmo nome do diretório, sendo este o nome do próprio pacote. Pois neste arquivo ficará a interface para uso do pacote.
-- Se o pacote é de múltiplos módulos (como é o caso da biblioteca padrão contendo módulos: io, net; dentre outros), para cada módulo que será usado posteriormente, é necessário criar um arquivo de interface.
+<b>Pontos importantes:</b>
+- Se o pacote é de <b>módulo único</b>, é necessário criar um arquivo dentro do diretório do pacote, com o mesmo nome do diretório, sendo este o nome do próprio pacote. Pois neste arquivo ficará a interface para uso do pacote.
+- Se o pacote é de <b>múltiplos módulos</b> (como é o caso da biblioteca padrão contendo módulos: io, net; dentre outros), para cada módulo que será usado posteriormente, é necessário criar um arquivo de interface.
 
 
+<b>Exemplo de arquivo de interface</b>
+```javascript
+use std:<string>
+use io\*
+
+interface std {
+    
+}
+```
 
 
 
