@@ -101,11 +101,32 @@ fn example (a: int, b: int) -> int {
 ```
 
 #### OOP
-```
-class
-attributes
-method
-instance / new
+#### Estrutura geral
+
+```javascript
+space station
+
+class Example {
+    priv var attributeA :uint = 31337;
+    priv var attributeB :str  = "Verbum 😃";
+
+    Example (a: uint, b :str) {
+        this.attributeA = a;
+        this.attributeB = b;
+    }
+
+    pub fn getValues () -> [] {
+        ret [
+            this.attributeA,
+            this.attributeB
+        ];
+    }
+}
+
+var obj :Example = new Example(31337, "Verbum");
+var result :array = obj.getValues();
+
+print("a: {}, b: {}\n", result[0], result[1]);
 ```
 
 
