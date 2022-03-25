@@ -49,19 +49,22 @@ Outros / gerais.
 
 #### Comandos especiais
 ```
-use                     Importação de módulos / bibliotecas
-var                     Declaração de variáveis
-if, elif, else          Condicionais
-for, break, next        Loops
-fn                      Funções
-ret                     Retorno usado em funções e métodos
+use                                 Importação de módulos / bibliotecas
+var                                 Declaração de variáveis
+if, elif, else                      Condicionais
+for, break, next                    Loops
+fn                                  Funções
+ret                                 Retorno usado em funções e métodos
 
-space                   Definição de área (semelhante a namespace e package)
-class                   Definição de classe
-extends                 Realização de herança
-pub, priv, pro, static  Definição de atributos e métodos
-this                    Referência ao objeto instanciado
-new                     Instancia novo objeto
+interface                           Definição de interface
+abstract                            Definição de abstração
+class                               Definição de classe
+extends                             Realização de herança
+implements                          Realização de implementação de interface
+pub, priv, pro, static, final       Definição de atributos e métodos
+this, self                          Referência ao objeto instanciado e aos recursos estáticos
+parent                              Acessa recursos de classe base e não da implementação atual
+new                                 Instancia novo objeto
 ```
 
 
@@ -249,6 +252,11 @@ print("Value: {}\n",
         ret value * 3; 
     })(31337)
 );
+
+// Função sem retorno.
+fn function () {
+    print("Verbum\n");
+}
 ```
 
 ---
@@ -258,9 +266,16 @@ print("Value: {}\n",
 - Interface: definição dos métodos que devem necessariamente ser implementados.
 - Abstração: permite criar uma abstração de uma classe, contendo métodos não implementados (abstratos). É um mecanismo que representa os recursos essenciais sem incluir detalhes de implementação. Ou seja, ocultação de implementação.
 - Herança: quando uma classe ou interface, herda as propriedades de outra.
-- Encapsulamento/visibilidade: com os comandos pub, priv e pro, se define a visibilidade dos atributos e métodos. Encapsulamento é o empacotamento de "dados" e "funções operando nesses dados" em um único componente e restringindo o acesso a alguns dos componentes do objeto. Encapsulamento significa que a representação interna de um objeto geralmente fica oculta fora da definição do objeto. Ou seja, ocultação de implementação.
+- Encapsulamento/visibilidade: com os comandos pub, priv, pro e static, se define a visibilidade dos atributos e métodos. Encapsulamento é o empacotamento de "dados" e "funções operando nesses dados" em um único componente e restringindo o acesso a alguns dos componentes do objeto. Encapsulamento significa que a representação interna de um objeto geralmente fica oculta fora da definição do objeto. Ou seja, ocultação de implementação.
 - Polimorfismo estático (sobrecarga): quando há vários métodos com o mesmo nome, mas com assinatura diferente (todos válidos).
 - Polimorfismo dinâmico (sobrescrita): quando se sobrescreve um método herdado de uma outra classe.
+
+<b>Comandos e operadores:</b>
+- interface, abstract, class
+- extends, implements
+- priv, private, pub, public, pro, protected
+- static, final
+- new, this, self, parent, ::, . (ponto, acessa componente de objeto)
 
 ```php
 // Interface comum...
@@ -275,8 +290,8 @@ interface ExampleTemplate extends FirstTemplate {
 }
 
 // Classe abstrata.
-class AbstractClass {
-    abstract pro fn abstractMethod ();
+abstract AbstrationCommon {
+    pro fn abstractMethod ();
 }
 
 // Classe.
@@ -285,22 +300,43 @@ class Common extends AbstractClass {
     pub fn checkString (string :str) -> int { /* ... */ }
 
     // Implementa método abstrato.
-    pro fn abstractMethod () {
+    pro fn abstractMethod (){
         // ...
+    }
+
+    // Testa "parent" na classe herdeira.
+    pub fn exampleA () -> str {
+        ret "Verbum";
+    }
+
+    pub fn getExampleA () -> str {
+        ret this.exampleA();
     }
 }
 
 // Classe com herança e implementação de interface.
-class Example extends Common implements ExampleTemplate {
+final class Example extends Common implements ExampleTemplate {
 
     // Atributos.
     priv var attributeA :uint = 31337;
     pub var attributeB :str  = "Verbum 😃";
+    pub static var subVersion :str = "1337";
 
     // Construtor.
     Example (a: uint, b :str) {
         this.attributeA = a;
         this.attributeB = b;
+    }
+
+    // Método estático.
+    pub static fn getVersion () -> str {
+        ret "1.0.0";
+    }
+
+    pub static fn getVersion (flag :bool) -> str {
+        if (flag)
+            ret self::getVersion();
+        ret self::subVersion;
     }
 
     // Declaração dos métodos e sobrecarga.
@@ -318,8 +354,17 @@ class Example extends Common implements ExampleTemplate {
     }
 
     // Sobrescreve método herdado (polimorfismo).
-    pro fn abstractMethod () {
+    final pro fn abstractMethod () {
         print("Verbum\n");
+    }
+
+    // Acessando uma implementação da classe base e não da atual (parent).
+    pub fn exampleA () -> str {
+        ret "Divinus";
+    }
+
+    pub fn getExampleB () -> str {
+        ret parent::exampleA();
     }
 }
 
@@ -329,10 +374,24 @@ var resultA :array    = obj.getValues();
 var resultB :int      = obj.getValues(1);
 var resultC :int      = obj.checkString("Verbum Divinus");
 
+print("Version: {}\n", Example::getVersion());
+print("Sub version: {}\n", Example::subVersion);
 print("ResultA = a: {}, b: {}\n", resultA[0], resultA[1]);
 print("resultB = {}\n", resultB);
 print("Check String = {}\n", resultC);
 
+// Exemplo com "parent".
+var obj1 = new Common();
+obj1.exampleA();            // Verbum
+obj1.getExampleA();         // Verbum
+
+var obj2 = new Example();
+obj2.exampleA();            // Divinus
+obj2.getExampleA();         // Divinus
+obj2.getExampleB();         // Verbum
 ```
+
+
+suportar retorno de classe, e chamada concatenada na expressão: toString().trim()
 
 
