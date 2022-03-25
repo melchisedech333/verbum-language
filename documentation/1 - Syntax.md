@@ -34,14 +34,14 @@ Atribuições.
 %=                      Atribui com módulo
 
 Outros / gerais.
-()                      Definição de escopo (usado em expressões)
+()                      Definição de escopo (expressões)
 {}                      Definição de escopo (código), e inclusão de dados em strings
 []                      Definição de escopo de array
 ;                       Finalização de comando
 : ->                    Prefixação para uso tipos, uso nas importações, e declaração em arrays associativos
 .                       Acessa elemento de objeto, e arrays
 \                       Caracteres especiais dentro de strings
-<>                      Utilizado com o comando "use" para importar múltiplos pacotes
+<>                      Utilizado com o comando "use" para importar múltiplos pacotes, especificar o tipo em arrays associativos
 " '                     Aspas simples e duplas são aceitas para caracteres e strings
 /**/ //                 Comentários
 ```
@@ -113,59 +113,6 @@ var variable :const     = "Verbum 😍";
 ```
 
 
-#### Tipos personalizados
-```javascript
-// Definição do tipo.
-type block = {
-    :int,
-    :str,
-    :array
-};
-
-// Inicialização (com array indexado).
-var variable :block = (10, 20, [ 'item 1', 31337, 3.14 ]);
-
-variable[0]         // 10
-variable[2][0]      // item 1
-variable[2][2]      // 3.14
-
-// Inicialização (com array associativo).
-var variable :block = (10, 20, { uid: 'Verbum ♥' });
-
-variable[0]         // 10
-variable[2].uid     // Verbum ♥
-
-// Uso dinâmico (com array indexado).
-var variable :block;
-
-variable[0] = 10;
-variable[1] = 20;
-variable[2] = [ 'item 1', 31337, 3.14 ];
-
-// Uso dinâmico (com array associativo).
-var variable :block;
-
-variable[0] = 10;
-variable[1] = 20;
-variable[2] = { uid: 'Verbum ♥' };
-
-// Tipos com protótipos de funções como elementos.
-type t_function = {
-    (:int, :str) -> int
-};
-
-var variable :t_function = functionA;
-var result               = variable(10, 20);
-
-// Definição direta como tipo.
-var variable : (:int, :str) -> int = functionA;
-
-var variable : (:int, :str) -> int;
-variable = functionA;
-variable = functionB;
-```
-
-
 #### Array
 ```javascript
 // Indexados, com acesso via número do index.
@@ -190,7 +137,7 @@ var variable :array = [
 // Associativos, com acesso via chave/hash.
 var variable :array = {
     items: [
-        { name: "Verbum" },
+        { name: "Verbum"  },
         { name: "Divinus" },
         {
             values: [
@@ -199,6 +146,11 @@ var variable :array = {
         },
         31337
     ]
+};
+
+var variable = {
+    value: 1.337 <:double> // Neste caso, quando necessário especificar o tipo
+                           // usa-se as setas laterais de abetura e fechamento.
 };
 
 // Exemplo de acessos em arrays associativos.
@@ -220,15 +172,25 @@ var variable : array = [
 ];
 
 // Protótipo de função como elemento de um array.
-var variable = {
-    identifier : 'onclick',
-    callback   : (:int, :str) -> int,
-};
-
+// Com arrays indexados.
 var variable = [
     31337,
-    (:int, :str) -> int
+    fn (a :int, b :int) -> int {
+        ret a + b;   
+    }
 ];
+
+var value = variable[1](10, 20);
+
+// Com arrays associativos.
+var variable = {
+    identifier : 'onclick',
+    callback   : fn (a :int, b :int) -> int {
+        ret a + b;   
+    }
+};
+
+var value = variable.callback(10, 20);
 ```
 
 
@@ -251,17 +213,35 @@ for (int a =0; a<100; a++)
 
 #### Funções
 ```rust
+// Uso comum.
 fn example (a: int, b: int) -> int {
     ret (a * b) + 31337;
 }
 
+// Concatenação de funções ().
 fn primary (a: int, b: int) -> int {
+    var value = 31337;
+
     fn secondary (a: int, b: int) -> int {
-        ret (a * b) + 31337;
+        ret (a * b) + value;
     }
 
     ret secondary(a, b);
 }
+
+// Função como variável.
+var function = (a :int, b :int) -> int {
+    ret a + b;
+};
+
+var result = function(10, 20);
+
+// Funções anonimas.
+print("Value: {}\n", 
+    (fn (value :int) -> int { 
+        ret value * 3; 
+    })(31337)
+);
 ```
 
 
@@ -269,9 +249,10 @@ fn primary (a: int, b: int) -> int {
 #### Estrutura geral
 
 ```javascript
-// Namespace / Package
+// Namespace
 // Herança
 // Polimorfismo
+
 space Station
 
 class Other {
