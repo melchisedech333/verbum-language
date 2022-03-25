@@ -256,19 +256,19 @@ print("Value: {}\n",
 #### Escopos e noções gerais
 
 Em relação a herança, é possível realizar múltiplas heranças, bastando separa-las por vírgula.
-```javascript
+```php
 interface A extends B, C, D { ...
 class A extends B, C, D { ...
 ```
 
 Também é possível implementar várias interfaces.
-```javascript
+```php
 class A implements B, C, D { ...
 ```
 
 Para ambos os casos, quando há conflito de métodos, os mesmos são tratados como polimorfismo, contendo várias possibilidade de chamar um método (de acordo com a assinatura). E para os métodos idênticos, os mesmos são sobrescritos (onde o último declarado irá predominar sobre os anteriores).
 
-```javascript
+```php
 // Interface: métodos públicos que as classes devem necessariamente implementar.
 interface FirstTemplate {
     pub fn getValues () -> array;
