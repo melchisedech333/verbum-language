@@ -263,7 +263,7 @@ print("Value: {}\n",
 - Polimorfismo dinâmico (sobrescrita): quando se sobrescreve um método herdado de uma outra classe.
 
 ```php
-// Interface: métodos públicos que as classes devem necessariamente implementar.
+// Interface comum...
 interface FirstTemplate {
     pub fn getValues () -> array;
     pub fn getValues (index :int) -> int;
