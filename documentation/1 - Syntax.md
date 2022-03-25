@@ -17,8 +17,11 @@
 use std:io
 use std:net
 
-// Arquivo: test.v
+// Arquivo: test.v.
 use test
+
+// Multiplas declarações.
+use std:io, std:net, test
 ```
 
 
@@ -38,7 +41,7 @@ var variable :str       = "Verbum 😃";
 ```javascript
 var variable :array = [ 3, 1, 3, 3, 7 ];
 var variable :array = [ 'V', true, "Verbum 😃" ];
-var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, n ];
+var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, true, n ];
 var variable :array = [ ];
 
 var variable :array = [
