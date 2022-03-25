@@ -42,6 +42,7 @@ Outros / gerais.
 .                       Acessa elemento de objeto, e arrays
 \                       Caracteres especiais dentro de strings
 <>                      Utilizado com o comando "use" para importar múltiplos pacotes
+" '                     Aspas simples e duplas são aceitas para caracteres e strings
 /**/ //                 Comentários
 ```
 
@@ -85,7 +86,7 @@ use std:io, path/test, other
 ```
 
 
-#### Tipos primitivos
+#### Tipos simples
 ```javascript
 // Para valores comuns o tipo é inferido automaticamente.
 // Os caracteres e strings são UNICODE.
@@ -94,10 +95,10 @@ var variable :float     = 1.337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
 var variable :char      = '♥';
-var variable :str       = "Verbum 😍";
+var variable :str       = 'Verbum 😍';
 
 // O UNICODE é aceito no uso comum da linguagem.
-var λ = "Verbum ♥";
+var λ = 'Verbum ♥';
 var π = 3.14;
 ```
 
@@ -112,12 +113,65 @@ var variable :const     = "Verbum 😍";
 ```
 
 
+#### Tipos personalizados
+```javascript
+// Definição do tipo.
+type block = {
+    :int,
+    :str,
+    :array
+};
+
+// Inicialização (com array indexado).
+var variable :block = (10, 20, [ 'item 1', 31337, 3.14 ]);
+
+variable[0]         // 10
+variable[2][0]      // item 1
+variable[2][2]      // 3.14
+
+// Inicialização (com array associativo).
+var variable :block = (10, 20, { uid: 'Verbum ♥' });
+
+variable[0]         // 10
+variable[2].uid     // Verbum ♥
+
+// Uso dinâmico (com array indexado).
+var variable :block;
+
+variable[0] = 10;
+variable[1] = 20;
+variable[2] = [ 'item 1', 31337, 3.14 ];
+
+// Uso dinâmico (com array associativo).
+var variable :block;
+
+variable[0] = 10;
+variable[1] = 20;
+variable[2] = { uid: 'Verbum ♥' };
+
+// Tipos com protótipos de funções como elementos.
+type t_function = {
+    (:int, :str) -> int
+};
+
+var variable :t_function = functionA;
+var result               = variable(10, 20);
+
+// Definição direta como tipo.
+var variable : (:int, :str) -> int = functionA;
+
+var variable : (:int, :str) -> int;
+variable = functionA;
+variable = functionB;
+```
+
+
 #### Array
 ```javascript
 // Indexados, com acesso via número do index.
 var variable :array = [ 3, 1, 3, 3, 7 ];
 var variable :array = [ 'V', '♥', true, "Verbum 😍" ];
-var variable :array = [ 10 :int, 20 :uint, 30.3, 40 :float, true, n ];
+var variable :array = [ 10 :int, 20 :int, 30.3, 40 :float, true, n ];
 var variable :array = [ ];
 
 var variable :array = [
@@ -129,7 +183,7 @@ var variable :array = [
     ],
     [
         a, b, c,
-        10 :int, 20 :uint, 30 :float
+        10 :int, 20 :int, 30 :float
     ]
 ];
 
@@ -147,7 +201,7 @@ var variable :array = {
     ]
 };
 
-// Exemplo de acessos de arrays associativos.
+// Exemplo de acessos em arrays associativos.
 variable.items[0].name              // Verbum
 variable.items[1].name              // Divinus
 variable.items[2].values[0]         // 10
@@ -164,6 +218,17 @@ var variable : array = [
         ] 
     }
 ];
+
+// Protótipo de função como elemento de um array.
+var variable = {
+    identifier : 'onclick',
+    callback   : (:int, :str) -> int,
+};
+
+var variable = [
+    31337,
+    (:int, :str) -> int
+];
 ```
 
 
@@ -175,6 +240,7 @@ elif (expression)
     print("value 2");
 else
     print("value 3");
+
 ```
 
 #### Loops
