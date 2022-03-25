@@ -20,8 +20,14 @@ use std:net
 // Arquivo: test.v.
 use test
 
+// Arquivo: path/test.v
+use path/test
+
 // Multiplas declarações.
 use std:io, std:net, test
+
+// Meslcando todos os modos.
+use std:io, path/test, other
 ```
 
 
@@ -32,8 +38,16 @@ var variable :uint      = 31337;
 var variable :float     = 3.1337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
-var variable :char      = 'V';
 var variable :str       = "Verbum 😃";
+```
+
+
+#### Constantes.
+```javascript
+var variable :const     = 31337;
+var variable :const     = 3.1337;
+var variable :const     = true;
+var variable :const     = "Verbum 😃";
 ```
 
 
@@ -107,6 +121,28 @@ fn primary (a: int, b: int) -> int {
     ret secondary(a, b);
 }
 ```
+
+
+#### Operadores
+```mysql
+// Aritméticos.
++           Soma
+-           Subtração
+*           Multiplicação
+/           Divisão
+%           Módulo
+++          Incremento
+--          Decremento
+
+// Relacionais.
+==          Igual
+!=          Não igual
+>           Maior que
+<           Menor que
+>=          Maior ou igual
+<=          Menor ou igual
+```
+
 
 #### OOP
 #### Estrutura geral
