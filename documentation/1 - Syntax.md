@@ -17,8 +17,8 @@
 use std:io
 use std:net
 
-// Arquivo.
-use filename
+// Arquivo: test.v
+use test
 ```
 
 
@@ -28,11 +28,14 @@ float
 char
 string
 bool
+const
 
 
 #### Estruturas de dados
+```
 array
 struct
+```
 
 
 #### Condicionais
@@ -59,9 +62,11 @@ fn example (int a) -> int {
 ```
 
 #### OOP
+```
 class
 attributes
 method
 instance / new
+```
 
 
