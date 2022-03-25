@@ -60,8 +60,8 @@ for (int a =0; a<100; a++)
 
 #### Funções
 ```rust
-fn example (a: int) -> int {
-    ret a + 31337;
+fn example (a: int, b: int) -> int {
+    ret (a * b) + 31337;
 }
 ```
 
