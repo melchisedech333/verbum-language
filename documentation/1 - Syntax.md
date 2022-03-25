@@ -1,13 +1,64 @@
 ### :arrow_right: Descrição geral da sintaxe Verbum.
 
-#### Comentários
-```
-// Comentário de única linha.
 
-/*
-    Comentário de
-    múltiplas linhas.
-*/
+#### Operadores
+```
+Aritméticos.
++                       Soma
+-                       Subtração
+*                       Multiplicação
+/                       Divisão
+%                       Módulo
+++                      Incremento
+--                      Decremento
+
+Relacionais.            
+==                      Igual
+!=                      Não igual
+>                       Maior que
+<                       Menor que
+>=                      Maior ou igual
+<=                      Menor ou igual
+
+Lógicos.            
+!                       Not (Negação)
+||                      Or (Ou)
+&&                      And (E)
+
+Atribuições.            
+=                       Atribui valor
++=                      Atribui com soma
+-=                      Atribui com subtração
+*=                      Atribui com multiplicação
+/=                      Atribui com divisão
+%=                      Atribui com módulo
+
+Outros / gerais.
+()                      Definição de escopo (usado em expressões)
+{}                      Definição de escopo (código), e inclusão de dados em strings
+[]                      Definição de escopo de array
+;                       Finalização de comando
+: ->                    Prefixação para uso tipos, e importações
+.                       Acessa elemento de objeto
+\                       Caracteres especiais dentro de strings
+/**/ //                 Comentários
+```
+
+
+#### Comandos especiais
+```
+use                     Importação de módulos / bibliotecas
+var                     Declaração de variáveis
+if, elif, else          Condicionais
+for                     Loops
+fn                      Funções
+ret                     Retorno usado em funções e métodos
+
+space                   Definição de área (semelhante a namespace e package)
+class                   Definição de classe
+pub, priv, static       Definição de atributos e métodos
+this                    Referência ao objeto instanciado
+new                     Instancia novo objeto
 ```
 
 
@@ -123,36 +174,15 @@ fn primary (a: int, b: int) -> int {
 ```
 
 
-#### Operadores
-```c
-// Aritméticos.
-+           Soma
--           Subtração
-*           Multiplicação
-/           Divisão
-%           Módulo
-++          Incremento
---          Decremento
-
-// Relacionais.
-==          Igual
-!=          Não igual
->           Maior que
-<           Menor que
->=          Maior ou igual
-<=          Menor ou igual
-```
-
-
 #### OOP
 #### Estrutura geral
 
 ```javascript
-space station
+space Station
 
 class Example {
     priv var attributeA :uint = 31337;
-    priv var attributeB :str  = "Verbum 😃";
+    pub var attributeB :str  = "Verbum 😃";
 
     Example (a: uint, b :str) {
         this.attributeA = a;
