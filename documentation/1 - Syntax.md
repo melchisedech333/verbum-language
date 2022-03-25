@@ -59,7 +59,7 @@ ret                     Retorno usado em funções e métodos
 space                   Definição de área (semelhante a namespace e package)
 class                   Definição de classe
 extends                 Realização de herança
-pub, priv, static       Definição de atributos e métodos
+pub, priv, pro, static  Definição de atributos e métodos
 this                    Referência ao objeto instanciado
 new                     Instancia novo objeto
 ```
@@ -253,7 +253,15 @@ print("Value: {}\n",
 
 ---
 #### OOP
-#### Escopos e noções gerais
+
+<b>Conceitos:</b>
+- Interface: definição dos métodos que devem necessariamente ser implementados.
+- Abstração: permite criar uma abstração de uma classe, contendo métodos não implementados (abstratos). É um mecanismo que representa os recursos essenciais sem incluir detalhes de implementação. Ou seja, ocultação de implementação.
+- Herança: quando uma classe ou interface, herda as propriedades de outra.
+- Encapsulamento/visibilidade: com os comandos pub, priv e pro, se define a visibilidade dos atributos e métodos. Encapsulamento é o empacotamento de "dados" e "funções operando nesses dados" em um único componente e restringindo o acesso a alguns dos componentes do objeto. Encapsulamento significa que a representação interna de um objeto geralmente fica oculta fora da definição do objeto. Ou seja, ocultação de implementação.
+- Polimorfismo estático (sobrecarga): quando há vários métodos com o mesmo nome, mas com assinatura diferente (todos válidos).
+- Polimorfismo dinâmico (sobrescrita): quando se sobrescreve um método herdado de uma outra classe.
+```
 
 Em relação a herança, é possível realizar múltiplas heranças, bastando separa-las por vírgula.
 ```php
@@ -266,7 +274,7 @@ Também é possível implementar várias interfaces.
 class A implements B, C, D { ...
 ```
 
-Para ambos os casos, quando há conflito de métodos, os mesmos são tratados como polimorfismo, contendo várias possibilidade de chamar um método (de acordo com a assinatura). E para os métodos idênticos, os mesmos são sobrescritos (onde o último declarado irá predominar sobre os anteriores).
+Para ambos os casos, quando há várias assinatura para um mesmo método, os mesmos são tratados como polimorfismo.
 
 ```php
 // Interface: métodos públicos que as classes devem necessariamente implementar.
@@ -280,10 +288,20 @@ interface ExampleTemplate extends FirstTemplate {
     pub fn checkString (string :str);
 }
 
+// Classe abstrata.
+class AbstractClass {
+    abstract pro fn abstractMethod ();
+}
+
 // Classe.
-class Common {
+class Common extends AbstractClass {
     // ...
     pub fn checkString (string :str) -> int { /* ... */ }
+
+    // Implementa método abstrato.
+    pro fn abstractMethod () {
+        // ...
+    }
 }
 
 // Classe com herança e implementação de interface.
@@ -299,7 +317,7 @@ class Example extends Common implements ExampleTemplate {
         this.attributeB = b;
     }
 
-    // Métodos e polimorfismo (sobrecarga).
+    // Declaração dos métodos e sobrecarga.
     pub fn getValues () -> array {
         ret [
             this.attributeA,
@@ -311,6 +329,11 @@ class Example extends Common implements ExampleTemplate {
         if (index == 1)
             ret this.attributeA;
         ret -1;
+    }
+
+    // Sobrescreve método herdado (polimorfismo).
+    pro fn abstractMethod () {
+        print("Verbum\n");
     }
 }
 
