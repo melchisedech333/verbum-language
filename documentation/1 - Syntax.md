@@ -218,7 +218,7 @@ fn example (a: int, b: int) -> int {
     ret (a * b) + 31337;
 }
 
-// Concatenação de funções ().
+// Concatenação de funções.
 fn primary (a: int, b: int) -> int {
     var value = 31337;
 
@@ -228,13 +228,6 @@ fn primary (a: int, b: int) -> int {
 
     ret secondary(a, b);
 }
-
-// Função como variável.
-var function = (a :int, b :int) -> int {
-    ret a + b;
-};
-
-var result = function(10, 20);
 
 // Funções anonimas.
 print("Value: {}\n", 
