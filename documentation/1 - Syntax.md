@@ -23,7 +23,7 @@ use test
 
 
 #### Tipos primitivos
-```rust
+```go
 var variable :int       = 31337;
 var variable :uint      = 31337;
 var variable :float     = 3.1337;
