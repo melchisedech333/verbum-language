@@ -65,6 +65,10 @@ pub, priv, pro, static, final       Definição de atributos e métodos
 this, self                          Referência ao objeto instanciado e aos recursos estáticos
 parent                              Acessa recursos de classe base e não da implementação atual
 new                                 Instancia novo objeto
+
+clone                               Função especial: clona objeto
+destroy                             Função especial: destroi objeto
+serialize, unserialize              Função especial: realiza serialização de objeto
 ```
 
 
@@ -277,6 +281,9 @@ fn function () {
 - static, final
 - new, this, self, parent, ::, . (ponto, acessa componente de objeto)
 
+<b>Funções especiais:</b>
+- clone, destroy, serialize, unserialize
+
 ```php
 // Interface comum...
 interface FirstTemplate {
@@ -414,6 +421,36 @@ class Example {
 
 var obj = new Example();
 obj.foo(10).show().bar(20).show();
+```
+
+<b>Classe anônima.</b>
+
+```php
+obj.setLogger(new class {
+    pub fn log (msg :str) {
+        print("{}\n", msg);
+    }
+});
+
+(new class {
+    pub fn show () {
+        print("Verbum\n");
+    }
+}).show();
+```
+
+<b>Outros recursos/funções especiais:</b>
+
+```php
+// Clona objeto.
+var objB :ClassName = clone(objA);
+
+// Destrói objeto.
+destroy(objA);
+
+// Serialization.
+var stringObject :str = serialize(objA);
+var objN :ClassName = unserialize(stringObject);
 ```
 
 
