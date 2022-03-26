@@ -88,7 +88,7 @@ use path/test
 use std:io, std:net, test
 use std:<io,net>, test
 
-// Meslcando todos os modos.
+// Mesclando todos os modos.
 use std:io, path/test, other
 
 // Todos arquivos dentro de um pacote ou diretório.
@@ -218,15 +218,15 @@ else
 
 #### Loops
 ```c++
-for (a:int = 0; a<100; a++)
+for (var a = 0; a<100; a++)
     print("Hello world\n");
 
-for (a:int = 0; ; a++) {
+for (var a = 0; ; a++) {
     if (a >= 100)
         break;
 }
 
-for (a:int = 0; ; a++) {
+for (var a = 0; ; a++) {
     if (a < 100)
         next;
 }
