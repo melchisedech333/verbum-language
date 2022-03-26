@@ -19,7 +19,7 @@ use string
 
 ---
 
-Organização do diretório (para um único módulos):
+Organização do diretório (para um único módulo):
 ```
 - string                        # directory:            nome do pacote
 |- package.json                 # file:                 configurações do pacote
@@ -98,7 +98,7 @@ use std:<string>
 use io\*
 
 interface std {
-    
+
 }
 ```
 
