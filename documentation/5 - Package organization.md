@@ -96,6 +96,7 @@ Mas pode-se escolher entre manter as dependências no diretório atual do pacote
 
 ```php
 use std:string
+use io/<file, memory>
 
 // Define interface.
 interface StdIOInterface {
