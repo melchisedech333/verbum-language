@@ -92,7 +92,7 @@ Mas pode-se escolher entre manter as dependências no diretório atual do pacote
 - Se o pacote é de <b>múltiplos módulos</b> (como é o caso da biblioteca padrão contendo módulos: io, net; dentre outros), para cada módulo que será usado posteriormente, é necessário criar um arquivo de interface.
 
 
-<b>Exemplo de arquivo de interface (<b>io.v</b>)</b>
+<b>Exemplo de arquivo de interface (io.v)</b>
 
 ```php
 use std:string
