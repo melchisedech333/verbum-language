@@ -391,7 +391,29 @@ obj2.getExampleA();         // Divinus
 obj2.getExampleB();         // Verbum
 ```
 
+<b>Método em cascata (fluent interface, method cascading, concretely method chaining).</b>
 
-suportar retorno de classe, e chamada concatenada na expressão: toString().trim()
+```php
+class Example {
+    priv var value :int = 0;
+
+    pub fn foo (a :int) -> this {
+        this.value += a;
+        ret this;
+    }
+
+    pub fn bar (a :int) -> this {
+        this.value += a;
+        ret this;
+    }
+
+    pub fn show () {
+        print("Value: {}\n", this.value);
+    }
+}
+
+var obj = new Example();
+obj.foo(10).show().bar(20).show();
+```
 
 
