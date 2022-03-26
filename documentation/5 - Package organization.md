@@ -97,17 +97,28 @@ Mas pode-se escolher entre manter as dependências no diretório atual do pacote
 ```php
 use std:string
 
+// Define interface.
 interface StdIOInterface {
     fn print (string :str);
 }
 
-class io implements StdIOInterface {
+// Implementa.
+class IO implements StdIOInterface {
     fn print (string :str) {
         _verbum_internal_print(string);
     }
 }
+
+// Cria variável global.
+var io = new IO();
 ```
 
+<b>Importação e uso do pacote</b>
 
+```php
+use std:io
+
+io.print("Verbum\n");
+```
 
 
