@@ -27,6 +27,4 @@ Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e nã
 - Alta tolerância a falhas
 - Escalabilidade horizontal
 
----
-
 
