@@ -73,7 +73,7 @@ serialize, unserialize              Função especial: realiza serialização de
 
 
 #### Importações
-```php
+```java
 // Biblioteca padrão.
 use std:io
 use std:net
@@ -87,13 +87,35 @@ use path/test
 // Multiplas declarações.
 use std:io, std:net, test
 use std:<io,net>, test
+use path1/<file1,file2>, path2
+
+use std:io,net,file, db:mysql, test
+use std:<dir/path x/file test, another file>
+use std:<my file paht>
+
+use <my file path>
 
 // Mesclando todos os modos.
 use std:io, path/test, other
 
 // Todos arquivos dentro de um pacote ou diretório.
 use std:*
-use path/*
+use path*
+
+// +++
+
+// Todos arquivos dentro de um pacote instalado, ou de diretório específico.
+use 'std:*'
+use 'path/*'
+
+// Definições únicas.
+use 'std:io'
+use 'test'
+use 'test.verbum' // Extensão opcional.
+use 'path/path/test'
+
+use 'std:io, std:net, test'
+use 'std:io, net'
 ```
 
 
@@ -101,16 +123,24 @@ use path/*
 ```javascript
 // Para valores comuns o tipo é inferido automaticamente.
 // Os caracteres e strings são UNICODE.
+// É aceito aspas simples ou duplas para as strings e caracteres.
 var variable :int       = 31337;
-var variable :float     = 1.337;
+var variable :float     = 0.1337;
 var variable :double    = 3.1337;
 var variable :bool      = true;
 var variable :char      = '♥';
 var variable :str       = 'Verbum 😍';
+var variable :string    = 'Verbum 😍';
 
 // O UNICODE é aceito no uso comum da linguagem.
-var λ = 'Verbum ♥';
+var λ = "Verbum ♥";
 var π = 3.14;
+
+// String de múltiplass linhas.
+var variable = "
+    In princípio
+    erat Verbum!
+";
 ```
 
 
@@ -181,8 +211,14 @@ var variable : array = [
         ] 
     }
 ];
+```
 
-// Função como elemento de um array.
+
+#### Aplicações específicas de arrays
+
+```javascript
+/* Função como elemento de um array. */
+
 // Com arrays indexados.
 var variable = [
     31337,
@@ -202,6 +238,19 @@ var variable = {
 };
 
 var value = variable.callback(10, 20);
+
+// Com funções anônimas.
+var variable = [
+    10, 20, 30,
+
+    (fn (value :int) -> int { 
+        ret value * 3; 
+    }),
+
+    40, 50, 60
+];
+
+var value = variable[3](10); // Retorna 30.
 ```
 
 

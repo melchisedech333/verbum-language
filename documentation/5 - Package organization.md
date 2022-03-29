@@ -1,44 +1,44 @@
 ### :arrow_right: Organização dos pacotes.
 
 Sintaxe do comando <b>use</b>:
-```php
-use PACKAGE:MODULE-MAIN-FILE
-use PACKAGE
+```java
+use 'PACKAGE:MODULE-MAIN-FILE'
+use 'MODULE-FILE'
 ```
 
 Exemplo:
-```php
-use std:io
-use string
+```java
+use 'std:io'        // Importa módulo 'io' de pacote 'std'.
+use 'std:io/file'   // Importa módulo 'file', que está dentro do 
+                    // módulo 'io', que por sua vez pertence ao pacote 'std';
+use 'string'        // Importa arquivo string.verbum do diretório em questão.
+use 'path/file'     // Importa arquivo file.verbum do diretório 'path'.
 ```
 
-- <b>std</b> = nome do pacote.
-- <b>io</b> = nome do arquivo (exports) do módulo (opcional).
+- <b>std</b> = nome do pacote instalado permanentemente.
+- <b>io</b> = nome do arquivo do módulo.
+- <b>io/file</b> = path do módulo de interesse.
 
-<b>Obs:</b> quando não se especifica o nome do módulo, o interpretador insere o mesmo com o mesmo nome do pacote. Por exemplo, ficando: <b>use string:string</b>.
+#### Estrutura de pacote.
 
----
-
-Organização do diretório (para um único módulo):
-```
-- string                        # directory:            nome do pacote
-|- package.json                 # file:                 configurações do pacote
-|- string.v                     # file:                 arquivo de referência do módulo
-```
-
-Organização do diretório (para múltiplos módulos):
 ```
 - std                           # directory:            nome do pacote
 |- package.json                 # file:                 configurações do pacote
-|- io.v                         # file:                 arquivo de referência do módulo
+|- io.verbum                    # file:                 arquivo de referência do módulo
 |- io                           # directory (optional): arquivos do módulo
-|--- file.v                     # ...
-|--- memory.v                   # ...
-|- net.v                        # file:                 ...
+|--- file.verbum                # ...
+|- net.verbum                   # file:                 ...
 |- net                          # directory (optional): ...
 ```
 
----
+Exemplo de uso:
+```java
+use 'std:io'
+
+io.print('Hello world!\n');
+```
+
+Um módulo é definido por um arquivo verbum. Opcionalmente pode existir sub-diretórios dentro do diretório do pacote. O ideal, caso necessário, é criar um diretório com o mesmo nome do módulo, para dentro dele implementar o sistema do módulo. Deste modo os arquivos Verbum que ficam dentro do diretório do pacote (std), são todos arquivos de interface para importações.
 
 #### Funcionamento do carregamento do pacote e módulo.
 
@@ -47,9 +47,12 @@ Ao iniciar a execução, o diretório raiz onde encontra-se o arquivo que foi in
 
 Existem dois diretórios raízes:
 - O diretório raiz da aplicação (com base no arquivo de código Verbum).
-- O diretório onde está instalado o interpretador.
+- O diretório onde está instalado o interpretador (onde ficam os módulos instalados de modo permanente).
 
-Um pacote é definido por um diretório (com seu nome), e um arquivo de configuração (package.json):
+Um pacote é definido por:
+- Um diretório com seu nome (por explode: <b>std</b>)
+- Um arquivo de importação contendo o mesmo nome do diretório (que é o nome do pacote)
+- Um arquivo de configuração <b>package.json</b>
 
 ```json
 {
@@ -82,21 +85,16 @@ Um pacote é definido por um diretório (com seu nome), e um arquivo de configur
 }
 ```
 
-Ao executar o instalador do pacote em questão, serão baixadas todas as dependências especificadas em <b>dependencies</b>, e assim sucessivamente, até concluir todos os downloads. Em seguida é verificado a versão dos pacotes. Estando tudo em ordem, o pacote pode ser utilizado nas aplicações Verbum.
+Ao executar o instalador do pacote em questão, serão baixadas todas as dependências especificadas em <b>dependencies</b>, e assim sucessivamente, até concluir todos os downloads. Conjuntamente é verificado a versão dos pacotes. Estando tudo em ordem, o pacote pode ser utilizado nas aplicações Verbum.
 
 Por padrão as dependências do pacote ficam instaladas e disponíveis para todos (instaladas no diretório de instalação da linguagem).
-Mas pode-se escolher entre manter as dependências no diretório atual do pacote em questão, ou instalar para uso permanente.
+Mas pode-se escolher entre manter as dependências no diretório atual do pacote em questão, ou instalar para uso permanente (noção semelhante ao npm).
 
-<b>Pontos importantes:</b>
-- Se o pacote é de <b>módulo único</b>, é necessário criar um arquivo dentro do diretório do pacote, com o mesmo nome do diretório, sendo este o nome do próprio pacote. Pois neste arquivo ficará a interface para uso do pacote.
-- Se o pacote é de <b>múltiplos módulos</b> (como é o caso da biblioteca padrão contendo módulos: io, net; dentre outros), para cada módulo que será usado posteriormente, é necessário criar um arquivo de interface.
+<b>Exemplo de arquivo de interface (io.verbum)</b>
 
-
-<b>Exemplo de arquivo de interface (io.v)</b>
-
-```php
-use std:string
-use io/<file, memory>
+```java
+use 'std:string'
+use 'io/file'
 
 // Define interface.
 interface StdIOInterface {
