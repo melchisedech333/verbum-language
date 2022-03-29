@@ -12,7 +12,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/melchisedech333/verbum-language?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/melchisedech333/verbum-language?style=for-the-badge)
 
-Verbum, uma linguagem de programação de sintaxe simples e intuitiva, suporta conceitos gerais como das linguagens de propósito geral, como programação procedural e orientação à objetos. Possui recursos próprios de linguagens modernas, como suporte nativo a computação distribuída, paralela e concorrente, meta-programação, hot cod reloading, e alta tolerância a falhas. O código Verbum é compilado para código nativo em tempo de execução (JIT compiler), tornando a Verbum VM extremamente rápida. Tais recursos somados tornam Verbum um linguagem especial e capaz de resolver uma grande faixa de problemas reais.
+Verbum, uma linguagem de programação de sintaxe simples e intuitiva, suporta conceitos gerais como das linguagens de propósito geral, como programação procedural e orientação à objetos. Possui recursos próprios de linguagens modernas, como suporte nativo a computação distribuída, paralela e concorrente, meta-programação, hot cod reloading, alta tolerância a falhas e capacidade de escalabilidade vetical e horizontal. O código Verbum é compilado para código de máquina nativo em tempo de execução (JIT compiler), tornando a Verbum VM extremamente rápida. Tais recursos somados tornam Verbum um linguagem especial e capaz de resolver uma grande faixa de problemas reais.
 
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
@@ -24,6 +24,6 @@ Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e nã
 - Hot code reloading
 - Alta tolerância a falhas
 - Multi-plataforma
-- Escalabilidade
+- Escalabilidade vertical e horizontal
 
 
