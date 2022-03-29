@@ -244,6 +244,7 @@ else
 
 #### Loops
 ```c++
+// Comum.
 for (var a = 0; a<100; a++)
     print("Hello world\n");
 
@@ -257,9 +258,11 @@ for (var a = 0; ; a++) {
         next;
 }
 
+// Equivalente ao while.
 for (a < 10)
     print("a: {}\n", a);
 
+// Loop infinito.
 for ()
     print("Infinite...\n");
 ```
