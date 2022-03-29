@@ -53,7 +53,7 @@ Existem dois diretórios raízes:
 
 Um pacote é definido por:
 - Um diretório com seu nome (por explode: <b>std</b>)
-- Um arquivo de importação contendo o mesmo nome do diretório (que é o nome do pacote)
+- Um arquivo de importação do pacote (io.Verbum)
 - Um arquivo de configuração <b>package.json</b>
 
 ```json
