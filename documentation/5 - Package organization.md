@@ -19,6 +19,8 @@ use 'path/file'     // Importa arquivo file.verbum do diretório 'path'.
 - <b>io</b> = nome do arquivo do módulo.
 - <b>io/file</b> = path do módulo de interesse.
 
+Obs: quando um pacote é importado mais de uma vez, por exemplo, quando pacotes/módulos importam coisas que outros pacotes/módulos já importaram, o compilador remove essas duplicações de nível superior, e a todos os níveis acima e em relação a importação de nível hierarquico mais profundo, fica acessível o respectivo módulo importado.
+
 
 #### Estrutura de pacote.
 
