@@ -1,6 +1,26 @@
-### :arrow_right: Descrição geral da sintaxe Verbum.
+## :arrow_right: Descrição geral da sintaxe Verbum.
 
-#### Operadores
+### Elementos
+<b>Compoenentes gerais:</b>
+- Operadores
+- Comandos especiais
+- Importações
+- Tipos simples
+- Constantes
+- Array
+- Condicionais
+- Loops
+
+<b>OOP:</b>
+- Interface
+- Abstração
+- Herança (apenas simples)
+- Encapsulamento / visibilidade
+- Polimorfismo estático
+- Polimorfismo dinâmico
+- Funções especiais
+
+### Operadores
 ```
 Aritméticos.
 +                       Soma
@@ -47,7 +67,7 @@ Outros / gerais.
 ```
 
 
-#### Comandos especiais
+### Comandos especiais
 ```
 use                                 Importação de módulos / bibliotecas
 var                                 Declaração de variáveis
@@ -72,7 +92,7 @@ serialize, unserialize              Função especial: realiza serialização de
 ```
 
 
-#### Importações
+### Importações
 ```php
 // Todos arquivos dentro de um pacote instalado, ou de diretório específico.
 use 'std:*'
@@ -95,7 +115,7 @@ use 'path2/*', 'mysql:*', 'json:unicode'
 ```
 
 
-#### Tipos simples
+### Tipos simples
 ```javascript
 // Para valores comuns o tipo é inferido automaticamente.
 // Os caracteres e strings são UNICODE.
@@ -121,7 +141,7 @@ var variable = "
 ```
 
 
-#### Constantes
+### Constantes
 ```javascript
 // Constantes aceitam apenas valores comuns.
 var variable :const     = 31337;
@@ -131,7 +151,7 @@ var variable :const     = "Verbum 😍";
 ```
 
 
-#### Array
+### Array
 ```javascript
 // Indexados, com acesso via número do index.
 var variable :array = [ 3, 1, 3, 3, 7 ];
@@ -191,7 +211,7 @@ var variable : array = [
 ```
 
 
-#### Aplicações específicas de arrays
+### Aplicações específicas de arrays
 
 ```javascript
 /* Função como elemento de um array. */
@@ -231,7 +251,7 @@ var value = variable[3](10); // Retorna 30.
 ```
 
 
-#### Condicionais
+### Condicionais
 ```python
 if (expression) 
     print("value 1");
@@ -242,7 +262,7 @@ else
 
 ```
 
-#### Loops
+### Loops
 ```c++
 // Comum.
 for (var a = 0; a<100; a++)
@@ -267,7 +287,7 @@ for ()
     print("Infinite...\n");
 ```
 
-#### Funções
+### Funções
 ```rust
 // Uso comum.
 fn example (a: int, b: int) -> int {
@@ -299,7 +319,7 @@ fn function () {
 ```
 
 ---
-#### OOP
+### OOP
 
 <b>Conceitos:</b>
 - Interface: definição dos métodos que devem necessariamente ser implementados.
