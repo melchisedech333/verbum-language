@@ -16,8 +16,7 @@ Verbum, uma linguagem de programação de sintaxe simples e intuitiva, suporta c
 
 Atualmente a linguagem encontra-se em desenvolvimento da primeira versão, e não possui ainda uma versão release.
 
-<b>Qualidades da Verbum:</b>
-
+<b>Qualidades da linguagem Verbum:</b>
 - Sintaxe simples e intuiva
 - Multi-paradigma: procedural e orientada a objetos
 - Computação distribuída, paralela, e concorrente
