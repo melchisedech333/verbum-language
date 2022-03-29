@@ -10,6 +10,7 @@
 - Array
 - Condicionais
 - Loops
+- Funções
 
 <b>OOP:</b>
 - Interface
