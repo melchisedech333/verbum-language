@@ -256,6 +256,12 @@ for (var a = 0; ; a++) {
     if (a < 100)
         next;
 }
+
+for (a < 10)
+    print("a: {}\n", a);
+
+for ()
+    print("Infinite...\n");
 ```
 
 #### Funções
