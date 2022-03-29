@@ -15,6 +15,7 @@
 <b>OOP:</b>
 - Interface
 - Abstração
+- Classe
 - Herança (apenas simples)
 - Encapsulamento / visibilidade
 - Polimorfismo estático
