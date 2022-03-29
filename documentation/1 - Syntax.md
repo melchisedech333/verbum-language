@@ -1,6 +1,5 @@
 ## :arrow_right: Descrição geral da sintaxe Verbum.
 
-### Elementos
 <b>Compoenentes gerais:</b>
 - Operadores
 - Comandos especiais
