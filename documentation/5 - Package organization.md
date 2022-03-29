@@ -162,38 +162,64 @@ use 'std:io/file'
 var fp = file.open("archive.txt");
 ```
 
-### Exemplo de interface de sub-módulo
+### Exemplo de pacote ideal
 
-<b>Arquivo: io/file.verbum</b>
+<b>Estrutura do pacote</b>
+
+```
+- std/                          # directory:            nome do pacote
+|- package.json                 # file:                 configurações do pacote
+|- io.verbum                    # file:                 arquivo de importação do módulo
+|- io.interface.verbum          # file:                 arquivo de interface do módulo
+|- io/                          # directory (optional): arquivos do módulo
+|--- io.verbum                  # ...
+```
+
+<b>Arquivo: io.interface.verbum</b>
 
 ```java
-use 'string'
+/*
+** Interface do pacote.
+*/
+
+interface IOInterface {
+    fn print (string :str);
+}
+```
+
+<b>Arquivo: io.verbum</b>
+
+```java
+/*
+** Arquivo de importação do pacote.
+*/
+
+use 'io/io.verbum' // Implementação do módulo.
+
+// Instancia acessível como variável global.
+var io = new IO();
+```
+
+<b>Arquivo: io/io.verbum</b>
+
+```java
+/*
+** Implementação do pacote.
+*/
+
+// Interface do módulo.
+use 'io.interface'
+
+// Módulos importados.
+use 'internal'
 use 'data-converter:example'
 
-// Define interface.
-interface IOFileInterface {
-    fn open (path :str) -> stream;
-}
-
-// Implementa.
-class IOFile implements IOFileInterface {
-    fn print (string :str) -> stream {
-        _verbum_internal_open(string);
+// Implementação.
+class IO implements IOInterface {
+    fn print (string :str) {
+        _verbum_internal_print(string);
     }
 }
-
-// Cria variável global.
-var file = new IOFile();
 ```
-
-<b>Importação e uso:</b>
-
-```java
-use 'std:io/file'
-
-var fp = file.open("archive.txt");
-```
-
-
 
 
