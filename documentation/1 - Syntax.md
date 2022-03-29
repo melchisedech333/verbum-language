@@ -73,7 +73,7 @@ serialize, unserialize              Função especial: realiza serialização de
 
 
 #### Importações
-```java
+```php
 // Todos arquivos dentro de um pacote instalado, ou de diretório específico.
 use 'std:*'
 use 'path/*'
