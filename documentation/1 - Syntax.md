@@ -74,48 +74,24 @@ serialize, unserialize              Função especial: realiza serialização de
 
 #### Importações
 ```java
-// Biblioteca padrão.
-use std:io
-use std:net
-
-// Arquivo: test.v.
-use test
-
-// Arquivo: path/test.v
-use path/test
-
-// Multiplas declarações.
-use std:io, std:net, test
-use std:<io,net>, test
-use path1/<file1,file2>, path2
-
-use std:io,net,file, db:mysql, test
-use std:<dir/path x/file test, another file>
-use std:<my file paht>
-
-use <my file path>
-
-// Mesclando todos os modos.
-use std:io, path/test, other
-
-// Todos arquivos dentro de um pacote ou diretório.
-use std:*
-use path*
-
-// +++
-
 // Todos arquivos dentro de um pacote instalado, ou de diretório específico.
 use 'std:*'
 use 'path/*'
 
-// Definições únicas.
+// Importações únicas.
 use 'std:io'
+use 'std:io/file'
 use 'test'
-use 'test.verbum' // Extensão opcional.
 use 'path/path/test'
 
-use 'std:io, std:net, test'
-use 'std:io, net'
+// Importações múltiplas (dentro de um único módulo ou diretório).
+use 'std:<io, net, os, string>'
+use 'path/<file1, file2, file3>'
+
+// Importações múltiplas em uma única linha.
+use 'std:<io,net>', 'path/test', 'util'
+use 'path2/*', 'mysql:*', 'json:unicode'
+
 ```
 
 
