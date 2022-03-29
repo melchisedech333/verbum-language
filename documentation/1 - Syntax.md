@@ -43,6 +43,7 @@ Outros / gerais.
 \                       Caracteres especiais dentro de strings
 <>                      Utilizado com o comando "use" para importar múltiplos pacotes, especificar o tipo em arrays associativos
 " '                     Aspas simples e duplas são aceitas para caracteres e strings
+::                      Acesso a métodos estáticos de uma classe
 /**/ //                 Comentários
 ```
 
