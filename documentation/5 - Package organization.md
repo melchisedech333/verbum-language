@@ -22,7 +22,7 @@ use 'path/file'     // Importa arquivo file.verbum do diretório 'path'.
 Obs: quando um pacote é importado mais de uma vez, por exemplo, quando pacotes/módulos importam coisas que outros pacotes/módulos já importaram, o compilador remove essas duplicações de nível superior, e a todos os níveis acima em relação a importação de nível hierarquico mais profundo, fica acessível o respectivo módulo importado.
 
 
-#### Estrutura de pacote.
+### Estrutura de pacote.
 
 ```
 - std                           # directory:            nome do pacote
@@ -44,7 +44,7 @@ io.print('Hello world!\n');
 Um módulo é definido por um arquivo verbum. Opcionalmente pode existir sub-diretórios dentro do diretório do pacote. O ideal, caso necessário, é criar um diretório com o mesmo nome do módulo, para dentro dele implementar o sistema do módulo. Deste modo os arquivos Verbum que ficam dentro do diretório do pacote (std), são todos arquivos de interface para importações.
 
 
-#### Funcionamento do carregamento do pacote e módulo.
+### Funcionamento do carregamento do pacote e módulo.
 
 O interpretador irá executar um arquivo inicial, onde este arquivo, por sua vez, poderá utilizar N pacotes.
 Ao iniciar a execução, o diretório raiz onde encontra-se o arquivo que foi inicialmente executado, será utilizado como diretório raiz da aplicação.
@@ -95,7 +95,7 @@ Por padrão as dependências do pacote ficam instaladas e disponíveis para todo
 Mas pode-se escolher entre manter as dependências no diretório atual do pacote em questão, ou instalar para uso permanente (noção semelhante ao npm).
 
 
-#### Exemplo de arquivo de interface
+### Exemplo de arquivo de interface
 
 <b>Arquivo: io.verbum</b>
 
@@ -128,7 +128,7 @@ use 'std:io'
 io.print("Verbum\n");
 ```
 
-#### Exemplo de interface de sub-módulo
+### Exemplo de interface de sub-módulo
 
 <b>Arquivo: io/file.verbum</b>
 
@@ -159,5 +159,39 @@ use 'std:io/file'
 
 var fp = file.open("archive.txt");
 ```
+
+### Exemplo de interface de sub-módulo
+
+<b>Arquivo: io/file.verbum</b>
+
+```java
+use 'string'
+use 'data-converter:example'
+
+// Define interface.
+interface IOFileInterface {
+    fn open (path :str) -> stream;
+}
+
+// Implementa.
+class IOFile implements IOFileInterface {
+    fn print (string :str) -> stream {
+        _verbum_internal_open(string);
+    }
+}
+
+// Cria variável global.
+var file = new IOFile();
+```
+
+<b>Importação e uso:</b>
+
+```java
+use 'std:io/file'
+
+var fp = file.open("archive.txt");
+```
+
+
 
 
