@@ -131,6 +131,7 @@ var variable :bool      = true;
 var variable :char      = '♥';
 var variable :str       = 'Verbum 😍';
 var variable :string    = 'Verbum 😍';
+var variavle :stream    = file.open('archive.bin');
 
 // O UNICODE é aceito no uso comum da linguagem.
 var λ = "Verbum ♥";

@@ -19,6 +19,7 @@ use 'path/file'     // Importa arquivo file.verbum do diretório 'path'.
 - <b>io</b> = nome do arquivo do módulo.
 - <b>io/file</b> = path do módulo de interesse.
 
+
 #### Estrutura de pacote.
 
 ```
@@ -39,6 +40,7 @@ io.print('Hello world!\n');
 ```
 
 Um módulo é definido por um arquivo verbum. Opcionalmente pode existir sub-diretórios dentro do diretório do pacote. O ideal, caso necessário, é criar um diretório com o mesmo nome do módulo, para dentro dele implementar o sistema do módulo. Deste modo os arquivos Verbum que ficam dentro do diretório do pacote (std), são todos arquivos de interface para importações.
+
 
 #### Funcionamento do carregamento do pacote e módulo.
 
@@ -90,19 +92,23 @@ Ao executar o instalador do pacote em questão, serão baixadas todas as depend�
 Por padrão as dependências do pacote ficam instaladas e disponíveis para todos (instaladas no diretório de instalação da linguagem).
 Mas pode-se escolher entre manter as dependências no diretório atual do pacote em questão, ou instalar para uso permanente (noção semelhante ao npm).
 
-<b>Exemplo de arquivo de interface (io.verbum)</b>
+
+#### Exemplo de arquivo de interface
+
+<b>Arquivo: io.verbum</b>
 
 ```java
-use 'std:string'
+use 'string'
 use 'io/file'
+use 'data-converter:example'
 
 // Define interface.
-interface StdIOInterface {
+interface IOInterface {
     fn print (string :str);
 }
 
 // Implementa.
-class IO implements StdIOInterface {
+class IO implements IOInterface {
     fn print (string :str) {
         _verbum_internal_print(string);
     }
@@ -112,12 +118,44 @@ class IO implements StdIOInterface {
 var io = new IO();
 ```
 
-<b>Importação e uso do pacote</b>
+<b>Importação e uso:</b>
 
-```php
-use std:io
+```java
+use 'std:io'
 
 io.print("Verbum\n");
+```
+
+#### Exemplo de interface de sub-módulo
+
+<b>Arquivo: io/file.verbum</b>
+
+```java
+use 'string'
+use 'data-converter:example'
+
+// Define interface.
+interface IOFileInterface {
+    fn open (path :str) -> stream;
+}
+
+// Implementa.
+class IOFile implements IOFileInterface {
+    fn print (string :str) -> stream {
+        _verbum_internal_open(string);
+    }
+}
+
+// Cria variável global.
+var file = new IOFile();
+```
+
+<b>Importação e uso:</b>
+
+```java
+use 'std:io/file'
+
+var fp = file.open("archive.txt");
 ```
 
 
