@@ -146,7 +146,7 @@ interface IOFileInterface {
 // Implementa.
 class IOFile implements IOFileInterface {
     fn print (string :str) -> stream {
-        _verbum_internal_open(string);
+        ret _verbum_internal_file_open(string);
     }
 }
 
@@ -208,7 +208,7 @@ var io = new IO();
 */
 
 // Interface do módulo.
-use 'io.interface'
+use '../io.interface'
 
 // Módulos importados.
 use 'internal'
