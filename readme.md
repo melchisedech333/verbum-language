@@ -10,7 +10,7 @@ Language: <a href="readme-pt.md">PT-BR</a>
      \/ \___|_|  |_.__/ \__,_|_| |_| |_|
 ```
 
-The Verbum language was initially created just for fun, but as time went by I came up with new ideas and this culminated in a programming language concept that I would really like to do.
+The Verbum language was initially created just for fun, but over time I had new ideas and this culminated in a programming language concept that I would really like to realize.
 
 Everything revolves around the idea of being able to abstract all the infrastructure used by a system, to the point of not needing to stop the system execution, even with drastic changes in its source code.
 
