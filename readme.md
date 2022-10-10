@@ -10,12 +10,12 @@ Language: <a href="readme-pt.md">PT-BR</a>
      \/ \___|_|  |_.__/ \__,_|_| |_| |_|
 ```
 
-A linguagem Verbum foi criada inicialmente por pura diversão, mas com o passar do tempo fui tendo novas ideias e isso culminou num conceito de linguagem de programação que eu gostaria muito de realizar.
+The Verbum language was initially created just for fun, but as time went by I came up with new ideas and this culminated in a programming language concept that I would really like to do.
 
-Tudo gira em torno da ideia de poder abstrair toda a infraestrutura utilizada por um sistema, ao ponto de não necessitar parar a execução do sistema, mesmo com modificações drásticas em seu código fonte.
+Everything revolves around the idea of being able to abstract all the infrastructure used by a system, to the point of not needing to stop the system execution, even with drastic changes in its source code.
 
-Inicialmente eu estava utilizando este repositório para armazenar os arquivos dos protótipos e testes diversos, mas preferi criar uma organização no Github para mantê-lo melhor organizado.
+Initially I was using this repository to store the files of prototypes and various tests, but I preferred to create an organization on Github to keep it better organized.
 
-Página da organização: https://github.com/verbum-lang
+Organization page: https://github.com/verbum-lang
 
 
