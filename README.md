@@ -1,30 +1,19 @@
-### :arrow_right: Verbum Programming Language ^_^
 
 ```
- __      __       _                   Language
- \ \    / /      | |                    
+ __      __       _              Programmig 
+ \ \    / /      | |                    Language
   \ \  / /__ _ __| |__  _   _ _ __ ___  
    \ \/ / _ \ '__| '_ \| | | | '_ ` _ \ 
     \  /  __/ |  | |_) | |_| | | | | | |
      \/ \___|_|  |_.__/ \__,_|_| |_| |_|
 ```
 
+A linguagem Verbum foi criada inicialmente por pura diversão, mas com o passar do tempo fui tendo novas ideias e isso culminou num conceito de linguagem de programação que eu gostaria muito de realizar.
 
-#### Obs: para melhor desenvolvimento da linguagem, foi criada uma organização para a Verbum.
-#### Página do projeto: https://github.com/verbum-lang
+Tudo gira em torno da ideia de poder abstrair toda a infraestrutura utilizada por um sistema, ao ponto de não necessitar parar o sistema mesmo com modificações drásticas em seu código fonte.
 
+Inicialmente eu estava utilizando este repositório para armazenar os arquivos dos protótipos e testes diversos, mas preferi criar uma organização no Github para mantê-lo melhor organizado.
 
-Verbum, uma linguagem de programação de sintaxe simples e intuitiva, suporta conceitos gerais como das linguagens de propósito geral, como programação procedural e orientação à objetos. Possui recursos próprios de linguagens modernas, como suporte nativo a computação distribuída, paralela e concorrente, meta-programação, hot cod reloading, alta tolerância a falhas e capacidade de escalabilidade vetical e horizontal. O código Verbum é compilado para código de máquina nativo em tempo de execução (JIT compiler), tornando a Verbum VM extremamente rápida. Tais recursos somados tornam Verbum um linguagem especial e capaz de resolver uma grande faixa de problemas reais.
-
-
-<b>Qualidades da linguagem Verbum:</b>
-- Sintaxe simples e intuiva
-- Multi-paradigma: procedural e orientada a objetos
-- Computação distribuída, paralela, e concorrente
-- Meta-programação
-- Hot code reloading
-- Alta tolerância a falhas
-- Multi-plataforma
-- Escalabilidade vertical e horizontal
+Página da organização: https://github.com/verbum-lang
 
 
